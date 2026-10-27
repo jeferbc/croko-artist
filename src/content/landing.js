@@ -68,6 +68,20 @@ export const artworks = [
     reference: null, // [Pendiente: foto de referencia de Rostintin]
     details: [],
   },
+  {
+    id: 'luna',
+    pet: 'Luna',
+    species: 'Perra (poodle)',
+    format: 'Mini',
+    year: 2026,
+    note: 'Moñitos y pañoleta morada sobre un fondo rosa intenso.',
+    src: '/obras/luna.jpg',
+    width: 2000,
+    height: 1978,
+    alt: 'Cuadro de perrita poodle gris con moños y pañoleta morada, pintado a mano en impasto sobre fondo rosado',
+    reference: null,
+    details: [],
+  },
 ];
 
 export const essence = {
