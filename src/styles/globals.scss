@@ -1,0 +1,849 @@
+// Croko (retratos) landing styles.
+// Palette taken from the Cocoa template the client liked (chocolate + gold),
+// on a warm canvas tone. Bootstrap is imported partially, like croko.co.
+
+// 1. Brand tokens → Bootstrap variables
+$chocolate: #703f07;
+$chocolate-dark: #4f2b03;
+$gold: #b8862f;
+$gold-soft: #f6ecd9;
+$canvas: #fbf8f4;
+$ink: #2b1a0c;
+$muted: #6f5b4a;
+$line: #e6dcd1;
+
+$primary: $chocolate;
+$body-bg: $canvas;
+$body-color: $ink;
+$link-color: $chocolate;
+$border-color: $line;
+$font-family-sans-serif: var(--font-body), system-ui, -apple-system, 'Segoe UI', sans-serif;
+$headings-font-family: var(--font-display), Georgia, 'Times New Roman', serif;
+$headings-font-weight: 400;
+$headings-color: $chocolate;
+$border-radius: 0.5rem;
+$border-radius-lg: 0.75rem;
+$btn-padding-y-lg: 0.85rem;
+$btn-padding-x-lg: 1.75rem;
+$btn-font-weight: 600;
+$input-bg: #fff;
+$input-border-color: #d8ccbf;
+$input-focus-border-color: $gold;
+$input-focus-box-shadow: 0 0 0 0.2rem rgba($gold, 0.25);
+$accordion-bg: #fff;
+$accordion-button-active-bg: $gold-soft;
+$accordion-button-active-color: $chocolate;
+$accordion-button-focus-box-shadow: 0 0 0 0.2rem rgba($gold, 0.3);
+$accordion-border-color: $line;
+
+// 2. Bootstrap: only what the page uses
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/images';
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/transitions';
+@import 'bootstrap/scss/accordion';
+@import 'bootstrap/scss/helpers';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/utilities/api';
+
+// 3. Base
+html {
+  scroll-padding-top: 72px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+body {
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+.container-narrow {
+  max-width: 820px;
+}
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $gold;
+  margin-bottom: 0.75rem;
+}
+.text-muted-warm {
+  color: $muted;
+}
+.optional {
+  font-weight: 400;
+  color: $muted;
+  font-size: 0.875em;
+}
+mark.pending {
+  background: #fff1b8;
+  color: #6b4e00;
+  border: 1px dashed #d4a200;
+  border-radius: 4px;
+  padding: 0 0.3em;
+}
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.link-arrow {
+  font-weight: 600;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// 4. Header
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba($canvas, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid $line;
+  padding-block: 0.6rem;
+}
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  text-decoration: none;
+  margin: 0;
+}
+.brand-name {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.5rem;
+  color: $chocolate;
+  line-height: 1;
+}
+.brand-sub {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $gold;
+}
+
+// 5. Sections
+.section {
+  padding-block: 4rem;
+  @include media-breakpoint-up(lg) {
+    padding-block: 5.5rem;
+  }
+}
+.section--tinted {
+  background: #f4ede4;
+}
+.section-title {
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.section-lead {
+  text-align: center;
+  color: $muted;
+  max-width: 60ch;
+  margin: 0 auto 2.5rem;
+  font-size: 1.05rem;
+}
+
+// 6. Hero
+.hero {
+  padding-block: 1.25rem 1rem;
+  @include media-breakpoint-up(lg) {
+    padding-block: 4rem 5.5rem;
+  }
+}
+.hero-title {
+  font-size: clamp(2rem, 5.2vw, 3.3rem);
+  line-height: 1.1;
+  margin-bottom: 1.1rem;
+}
+.hero-sub {
+  font-size: 1.1rem;
+  color: $muted;
+  max-width: 52ch;
+}
+.hero-price {
+  font-size: 1.05rem;
+  margin-block: 1.25rem;
+}
+.hero-micro {
+  font-size: 0.9rem;
+  color: $muted;
+  margin-top: 0.85rem;
+  max-width: 46ch;
+}
+.hero-art {
+  margin: 0;
+  // Small on phones so the headline and button stay near the first screen
+  max-width: min(240px, 62vw);
+  margin-inline: auto;
+  @include media-breakpoint-up(md) {
+    max-width: 360px;
+  }
+  @include media-breakpoint-up(lg) {
+    max-width: 480px;
+  }
+  figcaption {
+    font-size: 0.85rem;
+    color: $muted;
+    text-align: center;
+    margin-top: 0.75rem;
+  }
+}
+.hero-art__frame {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 0 $line, 0 24px 48px -24px rgba($chocolate-dark, 0.45);
+  img {
+    object-fit: cover;
+  }
+}
+
+// 7. Before / after
+.before-after {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  user-select: none;
+  img {
+    object-fit: cover;
+  }
+}
+.before-after__before {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+}
+.before-after__handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--pos);
+  width: 3px;
+  background: #fff;
+  transform: translateX(-50%);
+  pointer-events: none;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+.before-after__range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  margin: 0;
+}
+.before-after__label {
+  position: absolute;
+  bottom: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba($ink, 0.7);
+  color: #fff;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  pointer-events: none;
+}
+.before-after__label--left {
+  left: 0.75rem;
+}
+.before-after__label--right {
+  right: 0.75rem;
+}
+
+// 8. How it works
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  display: grid;
+  gap: 1.5rem;
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+  @include media-breakpoint-up(xl) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+.step {
+  h3 {
+    font-size: 1.3rem;
+    margin-block: 0.75rem 0.5rem;
+  }
+  p {
+    color: $muted;
+    margin: 0;
+  }
+}
+.step-num {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1.5px solid $gold;
+  color: $gold;
+  font-weight: 700;
+}
+
+// 9. Gallery
+// Same frame for every piece so mixed sizes read as one set; the lightbox shows the full image.
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+.art-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  border: 1px solid $line;
+}
+.art-card__img {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  aspect-ratio: 4 / 5;
+  background: $gold-soft;
+  cursor: zoom-in;
+  img {
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  &:hover img {
+    transform: scale(1.02);
+  }
+  &:focus-visible {
+    outline: 3px solid $gold;
+    outline-offset: -3px;
+  }
+}
+.art-card__zoom {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: $chocolate;
+}
+.art-card__body {
+  padding: 1rem 1.1rem 1.2rem;
+  h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.15rem;
+  }
+  p {
+    font-size: 0.92rem;
+    color: $muted;
+    margin-bottom: 0.6rem;
+  }
+}
+.art-card__meta {
+  font-size: 0.8rem !important;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $gold !important;
+}
+.art-card--next {
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.25rem;
+  text-align: center;
+  background: $gold-soft;
+  border-style: dashed;
+}
+.art-card__next-title {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.35rem;
+  color: $chocolate;
+}
+.chip {
+  border: 1px solid $line;
+  background: $canvas;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.7rem;
+  color: $chocolate;
+}
+.pswp__custom-caption {
+  background: rgba($ink, 0.75);
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  max-width: calc(100% - 2rem);
+}
+
+// 10. Essence quote
+.essence {
+  margin: 4rem auto 0;
+  max-width: 720px;
+  text-align: center;
+  blockquote p {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: clamp(1.5rem, 3.6vw, 2.2rem);
+    line-height: 1.25;
+    color: $chocolate;
+    margin: 0;
+  }
+  figcaption {
+    color: $gold;
+    font-weight: 600;
+    margin-block: 0.75rem 1.5rem;
+  }
+}
+.essence__body p {
+  color: $muted;
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+// 11. Formats
+.format-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+  max-width: 640px;
+  margin: 0 auto 2rem;
+}
+.format-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.8rem 0.5rem;
+  border: 1.5px solid $line;
+  border-radius: $border-radius;
+  background: #fff;
+  color: $ink;
+  transition: border-color 0.15s, background-color 0.15s;
+  &:hover {
+    border-color: $gold;
+  }
+  &.is-active {
+    border-color: $chocolate;
+    background: $gold-soft;
+    box-shadow: inset 0 0 0 1px $chocolate;
+  }
+  &:focus-visible {
+    outline: 3px solid rgba($gold, 0.5);
+    outline-offset: 2px;
+  }
+}
+.format-option__name {
+  font-weight: 700;
+}
+.format-option__size {
+  font-size: 0.8rem;
+  color: $muted;
+}
+.format-detail {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  max-width: 900px;
+  margin-inline: auto;
+  @include media-breakpoint-up(md) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+}
+.format-detail__price {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.wall {
+  position: relative;
+  aspect-ratio: 4 / 3; // 260 x 195 cm of wall
+  background: linear-gradient(#f3ece2, #ebe1d4);
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  &::after {
+    // floor
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    height: 3%;
+    background: #d9cbb8;
+  }
+}
+.wall__canvas {
+  position: absolute;
+  left: 50%;
+  bottom: 50%; // ~12 cm above the sofa back (floor 3% + sofa 41%)
+  width: var(--w);
+  aspect-ratio: var(--ar);
+  transform: translateX(-50%);
+  background: url('/obras/lazy.jpg') center / cover;
+  box-shadow: 0 8px 18px -6px rgba($chocolate-dark, 0.45);
+  transition: width 0.35s ease, aspect-ratio 0.35s ease;
+}
+.wall__sofa {
+  position: absolute;
+  left: 50%;
+  bottom: 3%;
+  width: 57.7%; // 150 cm
+  transform: translateX(-50%);
+  z-index: 1;
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+.wall-caption {
+  font-size: 0.8rem;
+  color: $muted;
+  text-align: center;
+  margin: 0.5rem 0 0;
+}
+.format-detail__size {
+  font-weight: 400;
+  color: $muted;
+}
+.size-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.size-option {
+  padding: 0.35rem 0.8rem;
+  border: 1.5px solid $line;
+  border-radius: 999px;
+  background: #fff;
+  color: $ink;
+  font-size: 0.9rem;
+  &.is-active {
+    border-color: $chocolate;
+    background: $gold-soft;
+  }
+  &:focus-visible {
+    outline: 3px solid rgba($gold, 0.5);
+    outline-offset: 2px;
+  }
+}
+.format-facts {
+  padding-left: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: $muted;
+}
+.about-credentials {
+  padding-left: 1.1rem;
+  margin-bottom: 1rem;
+  li {
+    margin-bottom: 0.35rem;
+  }
+}
+.footer-kits {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+.extras {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 0.45rem;
+    border-bottom: 1px solid $line;
+    font-size: 0.95rem;
+  }
+}
+
+// 12. About
+.about-photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  max-width: 100%;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  img {
+    object-fit: cover;
+  }
+}
+.about-photo--cutout {
+  aspect-ratio: auto;
+  overflow: visible;
+  max-width: 420px;
+  margin-inline: auto;
+  background: radial-gradient(circle at 50% 58%, $gold-soft 0 58%, transparent 58.5%);
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+.about-photo--empty {
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  background: repeating-linear-gradient(135deg, $gold-soft 0 14px, #fff 14px 28px);
+  border: 1px dashed $gold;
+  @include media-breakpoint-up(md) {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+// 13. Use cases
+.use-case {
+  height: 100%;
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: $border-radius-lg;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  h3 {
+    font-size: 1.35rem;
+    margin: 0;
+  }
+  p {
+    color: $muted;
+    margin: 0;
+    flex: 1;
+  }
+}
+.use-case--quiet {
+  background: #f1eee9;
+  border-color: #ddd6cc;
+  h3 {
+    color: #4a3f36;
+  }
+  .link-arrow {
+    color: #4a3f36;
+  }
+}
+
+// 14. Testimonials
+.testimonial {
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  margin: 0;
+  blockquote {
+    padding: 1.25rem 1.25rem 0;
+  }
+  figcaption {
+    padding: 0 1.25rem 1.25rem;
+    font-weight: 600;
+    color: $gold;
+  }
+}
+.testimonial__photo {
+  position: relative;
+  aspect-ratio: 1;
+  img {
+    object-fit: cover;
+  }
+}
+
+// 15. FAQ
+.faq .accordion-button {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: $ink;
+}
+.faq .accordion-header {
+  margin: 0;
+}
+.faq .accordion-body {
+  color: $muted;
+}
+
+// 16. Order form
+.section--form {
+  background: linear-gradient($canvas, $gold-soft);
+}
+.quick-start {
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: $border-radius-lg;
+  padding: 1.25rem;
+  @include media-breakpoint-up(md) {
+    padding: 2rem;
+  }
+}
+.quick-start__group {
+  margin-bottom: 1.25rem;
+  legend {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+.chip-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.chip-option {
+  padding: 0.5rem 0.9rem;
+  border: 1.5px solid $line;
+  border-radius: 999px;
+  background: #fff;
+  color: $ink;
+  font-size: 0.92rem;
+  &:hover {
+    border-color: $gold;
+  }
+  &.is-active {
+    border-color: $chocolate;
+    background: $gold-soft;
+    box-shadow: inset 0 0 0 1px $chocolate;
+  }
+  &:focus-visible {
+    outline: 3px solid rgba($gold, 0.5);
+    outline-offset: 2px;
+  }
+}
+
+.wa-float {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 30;
+  opacity: 0;
+  transform: translateY(12px) scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+}
+.wa-float__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: 999px;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.35);
+  svg {
+    width: 28px;
+    height: 28px;
+  }
+  &:hover {
+    background: #1ebe5a;
+  }
+  &:focus-visible {
+    outline: 3px solid rgba($gold, 0.6);
+    outline-offset: 3px;
+  }
+  @include media-breakpoint-up(lg) {
+    width: auto;
+    padding: 0 1.25rem 0 1rem;
+    font-weight: 600;
+  }
+}
+.wa-float__label {
+  display: none;
+  @include media-breakpoint-up(lg) {
+    display: inline;
+  }
+}
+.link-button {
+  background: none;
+  border: 0;
+  padding: 0;
+  text-align: left;
+}
+
+// 18. Footer
+.site-footer {
+  background: $chocolate-dark;
+  color: #e9dccb;
+  padding-block: 3rem calc(5rem + env(safe-area-inset-bottom, 0px));
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 2rem;
+  }
+  a {
+    color: #f6ecd9;
+  }
+  .brand-name {
+    color: #f6ecd9;
+  }
+}
+.footer-title {
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.footer-legal {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  font-size: 0.85rem;
+  color: #c9b8a3;
+}
