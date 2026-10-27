@@ -28,7 +28,7 @@ export const hero = {
 
 export const steps = [
   { title: 'Nos escribes', text: 'Por WhatsApp nos mandas sus fotos y te confirmamos tamaño y precio.' },
-  { title: 'Reservas tu cuadro', text: 'Pagas el 50 % y Carolina hace el boceto con la pose y el gesto.' },
+  { title: 'Reservas tu cuadro', text: 'Pagas el 50 % y Carolina hace el boceto, con hasta 2 ajustes.' },
   { title: 'Carolina lo pinta', text: 'Cuando apruebas el boceto, le da color y fondo según su personalidad.' },
   { title: 'Lo ves terminado', text: 'Te mandamos una foto y tienes una ronda de ajustes.' },
   { title: 'Te llega a casa', text: 'Pagas el otro 50 % y lo enviamos gratis.' },
@@ -184,7 +184,7 @@ export const faqs = [
   },
   {
     q: '¿Puedo pedir cambios?',
-    a: 'Sí, en dos momentos. Antes de pintar apruebas el boceto: ahí se definen la pose, el gesto y las facciones. Con el cuadro terminado te mandamos una foto y tienes una ronda de ajustes para agregar algo (una medallita, un accesorio), ajustar colores o intensificar el fondo. Después del boceto ya no se pueden cambiar la pose, el gesto ni las facciones, porque la textura del impasto ya está construida.',
+    a: 'Sí, en dos momentos. Antes de pintar apruebas el boceto, que incluye hasta 2 ajustes: ahí se definen la pose, el gesto y las facciones. Con el cuadro terminado te mandamos una foto y tienes una ronda de ajustes para agregar algo (una medallita, un accesorio), ajustar colores o intensificar el fondo. Después del boceto ya no se pueden cambiar la pose, el gesto ni las facciones, porque la textura del impasto ya está construida.',
   },
   {
     q: '¿Cuánto se demora?',
@@ -204,7 +204,7 @@ export const faqs = [
   },
   {
     q: '¿Cómo se paga?',
-    a: 'La mitad para reservar tu cuadro, antes de que Carolina haga el boceto, y la otra mitad después de la ronda de ajustes, antes de enviarlo. Puedes pagar con Wompi (tarjeta, Nequi, Daviplata o PSE) o por transferencia. No manejamos contraentrega: cada cuadro es de una sola mascota, la tuya.',
+    a: 'La mitad para reservar tu cuadro, antes de que Carolina haga el boceto, y la otra mitad después de la ronda de ajustes, antes de enviarlo. El anticipo no es reembolsable, porque con él Carolina reserva tu turno y empieza a trabajar en tu cuadro. Puedes pagar con Wompi (tarjeta, Nequi, Daviplata o PSE) o por transferencia. No manejamos contraentrega: cada cuadro es de una sola mascota, la tuya.',
   },
   {
     q: '¿Puede pintar a varias mascotas juntas?',
