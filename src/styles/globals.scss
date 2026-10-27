@@ -738,14 +738,23 @@ mark.pending {
   }
 }
 .chip-options {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .chip-option {
-  padding: 0.5rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0.5rem 0.75rem;
   border: 1.5px solid $line;
-  border-radius: 999px;
+  border-radius: $border-radius;
+  line-height: 1.25;
   background: #fff;
   color: $ink;
   font-size: 0.92rem;
@@ -761,6 +770,10 @@ mark.pending {
     outline: 3px solid rgba($gold, 0.5);
     outline-offset: 2px;
   }
+}
+.chip-option__sub {
+  font-size: 0.75rem;
+  color: $muted;
 }
 
 .wa-float {

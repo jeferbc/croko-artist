@@ -5,24 +5,35 @@ import { formats, quickStart as copy, sizeOption } from '@/content/landing';
 import { setChoice } from '@/lib/whatsapp';
 import WhatsAppButton from './WhatsAppButton';
 
-const sizeChips = formats.flatMap((f) => f.sizes.map((s) => ({ value: sizeOption(f, s), label: `${f.name} · ${s.label}` })));
+// One chip per format so both groups line up in the same grid. A format with a single
+// size sends its full label; the Mini sends just its name and the size is settled in the chat.
+const formatChips = formats.map((f) => ({
+  value: f.sizes.length === 1 ? sizeOption(f, f.sizes[0]) : f.name,
+  label: f.name,
+  sub: f.sizes.map((s) => s.label.replace(' cm', '')).join(' o ') + ' cm',
+  matches: (value) => value?.startsWith(f.name),
+}));
 
 function Chips({ label, options, value, onChange }) {
   return (
     <fieldset className="quick-start__group">
       <legend className="form-label">{label}</legend>
       <div className="chip-options">
-        {options.map((o) => (
-          <button
-            key={o.label}
-            type="button"
-            aria-pressed={value === o.value}
-            className={`chip-option${value === o.value ? ' is-active' : ''}`}
-            onClick={() => onChange(value === o.value ? null : o.value)}
-          >
-            {o.label}
-          </button>
-        ))}
+        {options.map((o) => {
+          const active = o.matches ? o.matches(value) : value === o.value;
+          return (
+            <button
+              key={o.label}
+              type="button"
+              aria-pressed={active}
+              className={`chip-option${active ? ' is-active' : ''}`}
+              onClick={() => onChange(active ? null : o.value)}
+            >
+              {o.label}
+              {o.sub && <span className="chip-option__sub">{o.sub}</span>}
+            </button>
+          );
+        })}
       </div>
     </fieldset>
   );
@@ -64,7 +75,7 @@ export default function QuickStart() {
         <div className="quick-start">
           <Chips
             label="Tamaño (opcional)"
-            options={[...sizeChips, { value: null, label: copy.noFormat }]}
+            options={[...formatChips, { value: null, label: copy.noFormat }]}
             value={format}
             onChange={pickFormat}
           />
