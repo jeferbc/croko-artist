@@ -22,7 +22,6 @@ npm run build && npm start
 | `N8N_WEBHOOK_URL` | Webhook de n8n que crea el Lead en Frappe. Solo se usa en el servidor. Si está vacío, el formulario igual abre WhatsApp. |
 | `NEXT_PUBLIC_SITE_URL` | URL pública, para canonical, Open Graph y los `@id` del schema. |
 | `NEXT_PUBLIC_GTM_ID` | Contenedor de Google Tag Manager de la nueva marca (opcional). |
-| `NEXT_PUBLIC_ALLOW_INDEXING` | Ponerlo en `1` al lanzar. Mientras no esté, la página lleva `noindex`. |
 
 ## Dónde se edita el contenido
 Todo el texto, los precios, las preguntas frecuentes y las obras están en **`src/content/landing.js`**.

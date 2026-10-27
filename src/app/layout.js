@@ -22,8 +22,6 @@ export const metadata = {
     description: seo.description,
     images: [{ url: '/obras/lazy.jpg', width: 1004, height: 1496, alt: 'Retrato de Lazy pintado a mano por Carolina Rincón' }],
   },
-  // Keep the preview out of search engines until launch
-  robots: process.env.NEXT_PUBLIC_ALLOW_INDEXING === '1' ? undefined : { index: false, follow: false },
 };
 
 export const viewport = {
