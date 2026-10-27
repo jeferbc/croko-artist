@@ -116,7 +116,7 @@ export const formats = [
 
 export const extras = [
   { id: 'extra-pet', name: 'Mascota adicional', price: 100000, unit: 'c/u', minPets: 2 },
-  { id: 'name', name: 'Nombre pintado a mano', included: true },
+  { id: 'name', name: 'Nombre pintado a mano', included: true, notIn: ['mini'] }, // too small for a name
 ];
 
 export const formatsNote =
@@ -212,7 +212,7 @@ export const faqs = [
   },
   {
     q: '¿Puede llevar el nombre de mi mascota?',
-    a: 'Sí. El nombre pintado a mano va incluido en todos los tamaños.',
+    a: 'Sí, en el Mediano y el Grande el nombre pintado a mano va incluido. El Mini no lleva nombre: es muy pequeño y le quitaría protagonismo a tu mascota.',
   },
   {
     q: 'Mi mascota ya partió. ¿Pueden pintarla?',

@@ -62,7 +62,7 @@ export default function FormatPicker() {
     announce(format, s);
   };
 
-  const visibleExtras = extras.filter((e) => !e.minPets || format.maxPets >= e.minPets);
+  const visibleExtras = extras.filter((e) => (!e.minPets || format.maxPets >= e.minPets) && !e.notIn?.includes(format.id));
 
   return (
     <div className="format-picker">

@@ -9,8 +9,7 @@ export default function Footer() {
         <div className="row g-4 align-items-start">
           <div className="col-md-5">
             <p className="brand brand--footer">
-              <span className="brand-name">Croko</span>
-              <span className="brand-sub">Retratos</span>
+              <span className="brand-name">Crokoartista</span>
             </p>
             <p>{site.tagline} por Carolina Rincón. Medellín, Colombia. Envío gratis a todo el país.</p>
             <p className="footer-kits">
