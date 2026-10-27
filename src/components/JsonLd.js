@@ -3,6 +3,12 @@ import { plain } from '@/lib/text';
 
 // Person reuses Carolina's @id from croko.co. Each format is a Product with one
 // Offer per confirmed size, so search engines never see placeholder data.
+// Pieces painted in this format; a format without one yet shows the whole portfolio.
+const imagesFor = (f) => {
+  const own = artworks.filter((a) => a.format === f.name);
+  return (own.length ? own : artworks).map((a) => `${site.url}${a.src}`);
+};
+
 export default function JsonLd() {
   const graph = [
     {
@@ -36,7 +42,7 @@ export default function JsonLd() {
         '@id': `${site.url}/#${f.id}`,
         name: `Retrato de mascota pintado a mano · ${f.name}`,
         description: `${plain(f.text)} Acrílico sobre lienzo, impresionismo al impasto.`,
-        image: artworks.map((a) => `${site.url}${a.src}`),
+        image: imagesFor(f),
         brand: { '@type': 'Brand', name: site.brand },
         offers: f.sizes.map((s) => ({
           '@type': 'Offer',
