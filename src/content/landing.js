@@ -27,9 +27,9 @@ export const hero = {
 };
 
 export const steps = [
-  { title: 'Nos escribes', text: 'Por WhatsApp nos mandas sus fotos y nos cuentas cómo es.' },
-  { title: 'Apruebas el boceto', text: 'Ahí se definen la pose y el gesto. Pagas el 50 %.' },
-  { title: 'Carolina lo pinta', text: 'Colores y fondo según su personalidad.' },
+  { title: 'Nos escribes', text: 'Por WhatsApp nos mandas sus fotos y te confirmamos tamaño y precio.' },
+  { title: 'Reservas tu cuadro', text: 'Pagas el 50 % y Carolina hace el boceto con la pose y el gesto.' },
+  { title: 'Carolina lo pinta', text: 'Cuando apruebas el boceto, le da color y fondo según su personalidad.' },
   { title: 'Lo ves terminado', text: 'Te mandamos una foto y tienes una ronda de ajustes.' },
   { title: 'Te llega a casa', text: 'Pagas el otro 50 % y lo enviamos gratis.' },
 ];
@@ -204,7 +204,7 @@ export const faqs = [
   },
   {
     q: '¿Cómo se paga?',
-    a: 'La mitad cuando apruebas el boceto y la otra mitad después de la ronda de ajustes, antes de enviarlo. Puedes pagar con Wompi (tarjeta, Nequi, Daviplata o PSE) o por transferencia. No manejamos contraentrega: cada cuadro es de una sola mascota, la tuya.',
+    a: 'La mitad para reservar tu cuadro, antes de que Carolina haga el boceto, y la otra mitad después de la ronda de ajustes, antes de enviarlo. Puedes pagar con Wompi (tarjeta, Nequi, Daviplata o PSE) o por transferencia. No manejamos contraentrega: cada cuadro es de una sola mascota, la tuya.',
   },
   {
     q: '¿Puede pintar a varias mascotas juntas?',
