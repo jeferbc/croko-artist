@@ -101,7 +101,6 @@ export const formats = [
     days: 10,
     sizes: [
       { id: 'mediano-30x30', label: '30 x 30 cm', w: 30, h: 30, price: 500000 },
-      { id: 'mediano-30x45', label: '30 x 45 cm', w: 30, h: 45, price: 600000, pending: true }, // Carolina confirms the size
     ],
   },
   {
@@ -197,7 +196,7 @@ export const faqs = [
   },
   {
     q: '¿Hacen envíos a toda Colombia?',
-    a: 'Sí, y el envío es gratis a cualquier ciudad del país; tarda de 2 a 3 días según la ciudad. Si estás en Medellín o el Valle de Aburrá, también puedes recogerlo en Envigado: lo coordinamos por WhatsApp. [Qué pasa si llega dañado: lo estamos definiendo con la transportadora.]',
+    a: 'Sí, y el envío es gratis a cualquier ciudad del país; tarda de 2 a 3 días según la ciudad. Si estás en Medellín o el Valle de Aburrá, también puedes recogerlo en Envigado: lo coordinamos por WhatsApp. Si llega con algún daño, nosotros nos encargamos del arreglo.',
   },
   {
     q: '¿Viene con marco?',
@@ -209,7 +208,7 @@ export const faqs = [
   },
   {
     q: '¿Puede pintar a varias mascotas juntas?',
-    a: 'Sí, aunque estén en fotos distintas. El Mediano tiene espacio para 2 mascotas y el Grande para 4; cada mascota adicional cuesta $100.000. El Mini es para una sola: si quieres varias, puedes pedir un Mini por cada una con [descuento por cantidad].',
+    a: 'Sí, aunque estén en fotos distintas. El Mediano tiene espacio para 2 mascotas y el Grande para 4; cada mascota adicional cuesta $100.000. El Mini es para una sola: si quieres varias, puedes pedir un Mini por cada una.',
   },
   {
     q: '¿Puede llevar el nombre de mi mascota?',

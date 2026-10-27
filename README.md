@@ -46,8 +46,8 @@ Los niveles de zoom son relativos al tamaño "ajustado a pantalla": un clic o do
 
 ## Pendiente antes de lanzar
 Ya se incluyeron las respuestas de Carolina del 26 de octubre: precios, medidas, tiempos, ajustes, entrega, pago, marca y credenciales. Falta:
-- **Carolina:** confirmar la medida 30 x 45 cm (se ve resaltada y no entra al schema); definir qué pasa si el cuadro llega dañado (seguro y embalaje); confirmar la transportadora y sus tarifas; comparaciones foto vs. cuadro de Lazy y Rostintin; permisos para publicar las obras nuevas.
-- **Jefferson:** el descuento por varios Minis (resaltado en la FAQ); confirmar el envío gratis con las tarifas, sobre todo en el Mini.
+- **Carolina:** la medida 30 x 45 cm del Mediano (se retiró hasta confirmarla); confirmar la transportadora y sus tarifas; comparaciones foto vs. cuadro de Lazy y Rostintin; permisos para publicar las obras nuevas.
+- **Jefferson:** el descuento por varios Minis (no se menciona en la página hasta definirlo); confirmar el envío gratis con las tarifas, sobre todo en el Mini.
 - Fotos profesionales de las obras, foto de Carolina y testimonios reales.
 - Workflow de n8n `/webhook/pet-portrait` y campos de mascota en el Lead de Frappe.
 - Dominio final, redes sociales y GTM/Pixel propios.
